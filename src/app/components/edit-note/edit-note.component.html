@@ -1,0 +1,25 @@
+<a routerLink=""> &larr;</a>
+
+<div [ngSwitch]="editingTitle" class="{{editingTitle?'':'title'}}">
+    <h1 *ngSwitchCase="false" (dblclick)="editingTitle=!editingTitle;">{{ noteTitle }}</h1>
+    <input maxlength="100"
+        *ngSwitchCase="true"
+        (keyup)="$event.code==='Enter'&&titleUpdated()"
+        [(ngModel)]="noteTitle" 
+        type="text" 
+        class="input">
+</div>
+
+<hr>
+
+<div [ngSwitch]="editingText" class="{{editingText?'':'text'}}">
+    <div *ngSwitchCase="false" class="note-container">
+        <p (dblclick)="editingText=!editingText;">{{ noteText }}</p>
+    </div>
+    <div *ngSwitchCase="true" class="container">
+        <textarea (keyup)="($event.code==='Enter'&&!$event.shiftKey)&&textUpdated()"
+            [(ngModel)]="noteText" 
+            class="input">
+        </textarea>
+    </div>
+</div>

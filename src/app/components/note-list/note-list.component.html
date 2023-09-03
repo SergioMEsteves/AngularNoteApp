@@ -1,0 +1,20 @@
+<hr class="topLine">
+<div class="topContainer">
+    <h1 class="header">Type in a Note Title and Press Enter to Add it</h1>
+    <button class="generateButton" (click)="generateNote()">Generate Random Note!</button>
+</div>
+<input maxlength="100" class="input" (keyup)="$event.code==='Enter'&&createNote()" [(ngModel)]="inputVal" placeholder="Note title goes here" type="text">
+<hr class="bottomLine">
+
+<h1 class="header">Note List</h1>
+
+<!-- The div below uses a custom directive to render when noteList is empty!-->
+<div  *appPlaceholderDirective="noteList.length" class="placeholder">
+    Add some notes to see them here!
+</div>
+
+<app-note *ngFor="let note of noteList; let i = index" [title]="note.title" [text]="note.text" [index]="i" (delete)="deleteNote(i)" class="note"></app-note>
+<!-- Above is a note component. 
+*ngFor allows it to replicate for each note in noteList
+text is property bound to the notes text in NoteListComponent
+We also bind the delete event to the function, passing along the index i-->

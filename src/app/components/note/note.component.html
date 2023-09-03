@@ -1,0 +1,18 @@
+<div class="note-container">
+    <div class="title-container">
+        <div [ngSwitch]="editingTitle" class="{{editingTitle?'':'title'}}">
+                <p *ngSwitchCase="false" (dblclick)="editingTitle=!editingTitle;">{{ title }}</p>
+                <input maxlength="100"
+                    *ngSwitchCase="true"
+                    (keyup)="$event.code==='Enter'&&titleUpdated()"
+                    [(ngModel)]="title" 
+                    type="text" 
+                    class="input">
+        </div>
+
+        <hr class="divider">
+        <button class="edit" [routerLink]="['/edit', index]">Edit</button>
+        <button class="delete" (click)="deleteNote()">Delete</button>
+    </div>
+    <p class="text">{{text | shortenText}}</p>
+</div>

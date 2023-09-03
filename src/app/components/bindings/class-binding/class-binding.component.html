@@ -1,0 +1,11 @@
+<h2>Class Binding Example</h2>
+
+<div class="bold curly red" 
+     [class.highlight]="addHighlight"
+     [style.color]="addHighlight?'black':'red'">
+     <!-- class. binds highlight class to a boolean, making it togglable-->
+     <!-- style. allows direct manipulation of the SCSS-->
+    This is some text 
+</div>
+
+<button (click)="addHighlight = !addHighlight">Add Highlight to the text</button>

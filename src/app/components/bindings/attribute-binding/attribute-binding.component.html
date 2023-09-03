@@ -1,0 +1,13 @@
+<table [border]="1">
+    <tr>
+        <td [attr.colspan]="numbers.length">One-Two</td>
+    </tr> <!-- generally, use attribute binding when property bindings fails-->
+    <tr>
+        <td [colSpan]="2">Three-Four</td>
+    </tr>
+    <tr>
+        <td>Five</td>
+        <td>Six</td>
+    </tr>
+</table>
+<button>{{ actionName }} with Aria</button>

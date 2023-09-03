@@ -1,0 +1,89 @@
+// Define variables
+$black: #000000;
+$white: #ffffff;
+$gray-light: #f2f2f2;
+$gray-medium: #b4b3b3;
+$gray-medium-dark: #999999;
+$gray-dark: #494949;
+$sleek-font: "Helvetica Neue", Arial, sans-serif;
+
+.title-container {
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.note-container {
+  border: 1px solid $gray-medium;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+  max-width: 100%;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.title {
+  font-family: $sleek-font;
+  font-weight: bold;
+  color: $gray-dark;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.text {
+  font-family: $sleek-font;
+  color: $gray-medium-dark;
+  font-size: 80%;
+}
+
+.divider {
+  width: 1px;
+  height: 20px;
+  background-color: $black;
+  margin: 0 10px;
+}
+
+.delete {
+  border-radius: 10%;
+  font-family: $sleek-font;
+  font-weight: bold;
+  color: $gray-dark;
+  height: 25px;
+  border: none;
+  margin: 5px;
+  transition: color 0.3s, background-color 0.3s, box-shadow 0.3s;
+
+  &:hover {
+    color: $white;
+    background-color: red;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
+}
+
+.edit {
+  border-radius: 10%;
+  font-family: $sleek-font;
+  font-weight: bold;
+  color: $gray-dark;
+  height: 25px;
+  border: none;
+  transition: color 0.3s, box-shadow 0.3s;
+
+  &:hover {
+    cursor: pointer;
+    color: $gray-medium;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.input {
+  width: fit-content;
+}

@@ -1,0 +1,48 @@
+// Define variables
+$black: #000000;
+$white: #ffffff;
+$gray-light: #f2f2f2;
+$gray-medium: #b4b3b3;
+$gray-medium-dark: #999999;
+$gray-dark: #494949;
+$sleek-font: "Helvetica Neue", Arial, sans-serif;
+
+  .title {
+    font-family: $sleek-font;
+    font-weight: bold;
+    color: $gray-dark;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  
+  .text {
+    font-family: $sleek-font;
+    color: $gray-medium-dark;
+    font-size: 80%;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .input {
+    width: fit-content;
+    margin: 5px;
+  }
+
+  .note-container {
+    padding: 5px;
+    margin: 5px;
+    max-width: 100%;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  textarea {
+    height: fit-content; 
+    width: fit-content;
+  }
+  
